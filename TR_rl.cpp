@@ -49,7 +49,7 @@ int main( int argc , char** argv ) {
    int linecount=0;
    float rate, area, width, area_sum=0;
 
-   sprintf(fff, "%ste", fName);
+   sprintf(fff, "%sate_rl", fName);
    std::ofstream outfile(fff);
    printf("out=%s",fff);
 
