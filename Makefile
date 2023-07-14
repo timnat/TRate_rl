@@ -3,9 +3,9 @@
 CXX = g++
 CXXFLAGS= -Wformat -O3
 
-TRate:
-	chmod +x TRate.sh
+TRate_rl:
+	chmod +x TRate_rl.sh
 
-	$(CXX) -o $@ $(CXXFLAGS) TR.v1.cpp
+	$(CXX) -o $@ $(CXXFLAGS) TRate_rl.cpp
 	
 clean:
