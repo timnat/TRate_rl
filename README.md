@@ -44,7 +44,7 @@ FOLDER_PATH="your/path/TRate_rl"
 
      ./TRate_rl.sh ./data/Exons_file.sbed ./data/Coverage_file.bg 300
 
-Output will be in a file Coverage_file.rate 
+Output will be in a file Coverage_file.rate_rl 
 
 Output format
 
