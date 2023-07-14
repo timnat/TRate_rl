@@ -1,8 +1,6 @@
 #!/bin/bash
 
-
-#FOLDER_PATH="your_path/TRate_rl"
-FOLDER_PATH=/home/newnataliya/From_timnatuk/APPS/APPS_NT/TRate_git/TRate
+FOLDER_PATH="your_path/TRate_rl"
 #TRate_rl version 1
 
 # Bedtools should be installed in your Path!
@@ -53,10 +51,10 @@ Name1=$(basename $Cov_file)
 
 bedtools intersect -sorted -wao -a EXONS_by_transcripts.tmp.sbed -b stdin < $Cov_file | awk '{print $4"\t"$8*$9"\t"$9}'  | sort -k1,1 > $Name1".ra"
 
-$FOLDER_PATH/TR_rl $Name1".ra" $L > $Name1".rate.log"
+$FOLDER_PATH/TRate_rl $Name1".ra" $L > $Name1".rate_rl.log"
 
-echo "File $Cov_file processed, result is in "$Name1".ra"
+echo "File $Cov_file processed, result is in "$Name1".rate_rl"
 echo "Removing intermediate files";
-#rm $Name1".ra"
+rm $Name1".ra"
 
 
