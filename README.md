@@ -1,7 +1,7 @@
-# _TRate_
-The _TRate_ program computes "rate" of each transcript according to given coverage file. Transcripts are coded by coordinates of their exons (bed file for now, gtf/gff in future). Rate is computed as total _mass_ of exons within the transcript divided by total _length_ of exons. _Mass_ is taken as approximation of the area under coverage curve, i.e. sum of areas of coverage rectangles, and _length_ is computed as sum of lengths of bedgraph intervals within exons.
+# _TRate_rl_
+The _TRate_rl_ program computes "rate" of each transcript according to given coverage file. Transcripts are coded by coordinates of their exons (bed file for now, gtf/gff in future). Rate is computed as total _mass_ of exons within the transcript divided by 2X of read length (similar to ...). _Mass_ is taken as approximation of the area under coverage curve, i.e. sum of areas of coverage rectangles.
 
-The _TRate_ program takes in two arguments in fixed order.
+The _TRate_ program takes in three arguments in fixed order.
 
 1. Exons_file - coordinate sorted bed file that provides locations of exons for the corresponding transcript provided in column 4.
 
@@ -21,6 +21,8 @@ Coverage_file format example
      C0000570	10579	10610	0.41057
      C0000570	128288	128293	1.105
 
+3. Read length (for single end libraries) and doubled read length for paired end libraries (e.g. 300 for paired end reads of length 150)
+
 ## _USAGE_
 ### Prerequisites (MUST be in your PATH)
 	BEDTOOLS
@@ -28,21 +30,21 @@ Coverage_file format example
     g++
 	
 ### Installation
-Download TRate
+Download TRate_rl
 
-cd TRate
+cd TRate_rl
 
 make		
 
-In file TRate.sh edit path to TRate folder, e.g.
+In file TRate_rl.sh edit path to TRate_rl folder, e.g.
 
-FOLDER_PATH="your/path/TRate"
+FOLDER_PATH="your/path/TRate_rl"
 
 ### Run TRate on test data
 
-     ./TRate.sh ./data/Exons_file.sbed ./data/Coverage_file.bg
+     ./TRate_rl.sh ./data/Exons_file.sbed ./data/Coverage_file.bg 300
 
-Output will be in a file Coverage_file.rate. 
+Output will be in a file Coverage_file.rate 
 
 Output format
 
