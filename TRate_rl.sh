@@ -49,12 +49,12 @@ Name1=$(basename $Cov_file)
 
 #echo "Cov_file="$Cov_file
 
-bedtools intersect -sorted -wao -a EXONS_by_transcripts.tmp.sbed -b stdin < $Cov_file | awk '{print $4"\t"$8*$9"\t"$9}'  | sort -k1,1 > $Name1".rl.ra"
+bedtools intersect -sorted -wao -a EXONS_by_transcripts.tmp.sbed -b stdin < $Cov_file | awk '{print $4"\t"$8*$9"\t"$9}'  | sort -k1,1 > $Name1".r"
 
-$FOLDER_PATH/TR_rl $Name1".rl.ra" $L > $Name1".rate_rl.log"
+$FOLDER_PATH/TR_rl $Name1".r" $L > $Name1".rate_rl.log"
 
 echo "File $Cov_file processed, result is in "$Name1".rate_rl"
 echo "Removing intermediate files";
-rm $Name1".rl.ra"
+rm $Name1".r"
 
 
